@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'ABCGintoNord';
+  src:  url('/fonts/ABCGintoNord-Regular.woff2') format('woff2'),
+        url('/fonts/ABCGintoNord-Regular.woff') format('woff'),
+        url('/fonts/ABCGintoNord-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ABCGintoNord';
+  src:  url('/fonts/ABCGintoNord-Medium.woff2') format('woff2'),
+        url('/fonts/ABCGintoNord-Medium.woff') format('woff'),
+        url('/fonts/ABCGintoNord-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
