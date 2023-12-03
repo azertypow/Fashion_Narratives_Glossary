@@ -50,12 +50,31 @@ p {
 
 // ui
 
+.app-button,
 button {
   all: unset;
   display: inline-block;
   cursor: pointer;
   padding: 1rem;
   border-radius: 2rem;
-  background: linear-gradient(90deg, var(--color-purple), var(--color-green));
+  background: linear-gradient(90deg, var(--fs-color-purple), var(--fs-color-green));
   user-select: none;
+
+  &.app-button--width-img {
+    width:  3rem;
+    height: 3rem;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    > img {
+      pointer-events: none;
+      display: block;
+      height: 1.5rem;
+      width: 1.5rem;
+      object-fit: contain;
+      object-position: center center;
+    }
+  }
 }

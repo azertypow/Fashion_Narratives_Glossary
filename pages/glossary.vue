@@ -29,7 +29,7 @@ defineProps<{
 .v-glossary {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: var(--gutter);
+    gap: var(--fs-gutter);
 
     > img {
         display: block;

@@ -20,7 +20,7 @@
             v-else
             width="auto"
             height="auto"
-            src="https://miro.com/app/live-embed/uXjVOCP7CVk=/?moveToViewport=-88062,-124419,215771,113579&embedId=450868627160&embedAutoplay=true"
+            src="https://miro.com/app/live-embed/uXjVOCP7CVk=/?moveToViewport=-88062,-124419,215771,113579&embedId=450868627160&embedAutoplay=true&embedMode=view_only_without_ui"
             frameborder="0"
             scrolling="no"
             allow="fullscreen; clipboard-read; clipboard-write"
@@ -64,8 +64,8 @@ iframe {
 
 .v-index__close-presentation {
     position: absolute;
-    top: var(--gutter);
-    right: var(--gutter);
+    top: var(--fs-gutter);
+    right: var(--fs-gutter);
     z-index: 100;
     opacity: .25;
 

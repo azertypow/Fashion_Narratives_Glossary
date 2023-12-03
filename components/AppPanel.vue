@@ -53,16 +53,22 @@ function takeMeThroughClicked() {
     width: 100%;
     height: 100%;
     position: relative;
-    background: linear-gradient(180deg, var(--color-orange) 60%, var(--color-green) 100%);
+    background: linear-gradient(180deg, var(--fs-color-orange) 60%, var(--fs-color-green) 100%);
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 10rem 1rem 1rem;
+    padding: 5rem 1rem 0;
+    overflow: auto;
+}
+
+.v-app-panel__box__content {
+    padding-bottom: 2rem;
 }
 
 .v-app-panel__box__nav {
     font-weight: 500;
+    padding-bottom: 1rem;
 
     > * {
         font-size: 1.75rem;
