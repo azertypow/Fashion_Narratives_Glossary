@@ -44,7 +44,7 @@ p {
     margin-top: 0;
   }
   > *:last-child {
-    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 
@@ -77,4 +77,68 @@ button {
       object-position: center center;
     }
   }
+}
+
+.app-nav-link {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &.is-active {
+    text-decoration: underline;
+  }
+}
+
+.app-tag {
+  background: var(--fs-color-green);
+  border-radius: 1rem;
+  height: 2rem;
+  box-sizing: border-box;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  font-size: .85rem;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &.app-tag--is-active {
+
+  }
+
+  .app-tag__text {
+
+  }
+}
+
+
+.router-link-active {
+  text-decoration: underline;
+  cursor: default !important;
+}
+
+
+// vue transitions
+
+.fade-transition-reverse-enter-active,
+.fade-transition-reverse-leave-active {
+  transition: opacity 1s .75s cubic-bezier(.42, 0, 0, 1), transform 1s .75s cubic-bezier(.42, 0, 0, 1);
+  transform-origin: right;
+}
+
+.fade-transition-reverse-leave-active {
+  transition: opacity .5s 0s cubic-bezier(.42, 0, 0, 1), transform .5s 0s cubic-bezier(.42, 0, 0, 1);
+}
+
+.fade-transition-reverse-enter-from,
+.fade-transition-reverse-leave-to {
+  opacity: 0;
+  transform: scale(.99);
 }

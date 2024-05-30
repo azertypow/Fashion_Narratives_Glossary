@@ -13,12 +13,17 @@
             >
                 <div
                     class="app-button app-button--width-img"
-                    @click="panelIsOpen = !panelIsOpen"
+                    @click="setPanelStatus"
                 >
                     <img
                         alt="ui open panel"
                         src="./assets/menu_FILL0_wght400_GRAD0_opsz24.svg"
                         v-if=" ! panelIsOpen"
+                    />
+                    <img
+                        alt="ui close panel"
+                        src="./assets/arrow_back_FILL0_wght400_GRAD0_opsz24.svg"
+                        v-else-if="showTeam || showAbout"
                     />
                     <img
                         alt="ui close panel"
@@ -44,6 +49,31 @@
                     <AppPanel/>
                 </div>
             </transition>
+
+            <transition
+                name="fade-transition"
+            >
+                <div class="v-app__logo-container"
+                     v-if="panelIsOpen"
+                >
+                    <img
+                        style="display: block; height: 1.25rem"
+                        alt="logo head" src="./assets/logo_hes-so.png"
+                        draggable="false"
+                    />
+                    <a
+                        href="https://www.hesge.ch/head/"
+                        target="_blank"
+                    >
+                        <img
+                            style="display: block; height: 3rem"
+                            alt="logo head" src="./assets/logo_head.png"
+                            draggable="false"
+                        />
+                    </a>
+                </div>
+            </transition>
+
         </div>
         <div
             class="v-app__content"
@@ -53,7 +83,7 @@
             </NuxtLayout>
             <div
                 v-if="panelIsOpen"
-                @click="panelIsOpen = false"
+                @click="setPanelStatus"
                 class="v-app__content__cache-for-nav-open"
             ></div>
         </div>
@@ -64,10 +94,34 @@
 
 <script lang="ts" setup>
 
-import {usePanelIsOpen} from "#imports";
+import {fetchApi_siteDetails, usePanelIsOpen, useShowAbout, useShowTeam} from "#imports";
+import {useSiteDetails} from "~/composables/useStates";
 
 const panelIsOpen = usePanelIsOpen()
 const takeMeThrough = useTakeMeThrough()
+const showTeam = useShowTeam()
+const showAbout = useShowAbout()
+
+useRouter().beforeEach((to, from, next) => {
+    panelIsOpen.value = false
+    showTeam.value = false
+    showAbout.value = false
+    next()
+})
+
+onMounted(async () => {
+    useSiteDetails().value = await fetchApi_siteDetails()
+})
+
+function setPanelStatus() {
+    if( showTeam.value || showAbout.value ) {
+        showTeam.value = false
+        showAbout.value = false
+        scrollToTopOfPanel()
+    } else {
+        panelIsOpen.value = !panelIsOpen.value
+    }
+}
 
 </script>
 
@@ -103,7 +157,7 @@ const takeMeThrough = useTakeMeThrough()
         left: 0;
         width: 100%;height: 100%;
         cursor: pointer;
-
+        background: rgba(255, 255, 255, 0.5);
     }
 
     .menu-is-open & {
@@ -130,9 +184,16 @@ const takeMeThrough = useTakeMeThrough()
     align-items: center;
     width: calc(100% / 3 );
     min-width: 25em;
+    transition: background-color 0s 0s;
+    background-color: transparent;
 
     @media (min-width: 1400px) {
         width: calc(100% / 4 );
+    }
+
+    .menu-is-open & {
+        background-color: var(--fs-color-orange);
+        transition: background-color 0s 3s;
     }
 }
 
@@ -154,6 +215,21 @@ const takeMeThrough = useTakeMeThrough()
 
     @media (min-width: 1400px) {
         width: calc(100% / 4 );
+    }
+}
+
+.v-app__logo-container {
+    position: fixed;
+    right: var(--fs-gutter);
+    bottom: var(--fs-gutter);
+    z-index: 100;
+    display: flex;
+    gap: 2rem;
+    align-items: flex-end;
+    user-select: none;
+
+    a {
+        display: block;
     }
 }
 
