@@ -34,7 +34,7 @@
             <div        class="app-nav-link" @click="showTeamClicked">Team</div>
             <div        class="app-nav-link" @click="showAboutClicked">About</div>
             <a          class="app-nav-link" target="_blank" href="https://www.instagram.com/headmediadesign/">Instagram</a>
-            <a          class="app-nav-link" target="_blank" href="https://github.com/azertypow/Fashion_Narratives_Glossary">Github</a>
+            <a          class="app-nav-link" target="_blank" href="https://head-publishing.ch/wear-the-game-designing-narratives-for-digital-fashion">Manifesto</a>
         </div>
     </section>
 </template>
