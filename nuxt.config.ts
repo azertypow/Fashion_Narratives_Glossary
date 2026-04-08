@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
     devtools: {enabled: true},
     app: {
-        baseURL: "/Fashion_Narratives_Glossary/",
+        baseURL: "/",
     },
     css: [
         '~/assets/_main.scss',
