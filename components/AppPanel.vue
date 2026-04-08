@@ -23,14 +23,6 @@
                     <h2 v-html="useSiteDetails().value.introText" ></h2>
                 </div>
             </div>
-
-
-
-            <button
-                class="button--xl"
-                @click="takeMeThroughClicked"
-            ><template v-if="!takeMeThrough" >Take me through</template><template v-else>Close presentation mode</template>
-            </button>
         </div>
 
         <div
@@ -57,16 +49,8 @@ import {useRoute} from "#app";
 import {useSiteDetails} from "~/composables/useStates";
 
 const panelIsOpen = usePanelIsOpen()
-const takeMeThrough = useTakeMeThrough()
 const showTeam = useShowTeam()
 const showAbout = useShowAbout()
-
-function takeMeThroughClicked() {
-    if( useRoute().name !== 'index' ) useRouter().push('/')
-    takeMeThrough.value = !takeMeThrough.value
-
-    if( takeMeThrough.value )  panelIsOpen.value = false
-}
 
 function showTeamClicked() {
     showAbout.value = false

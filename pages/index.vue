@@ -1,23 +1,6 @@
 <template>
     <section class="v-index" >
-        <button
-            class="v-index__close-presentation"
-            v-if="takeMeThrough && !panelIsOpen"
-            @click="takeMeThrough = false"
-        >Close presentation mode</button>
         <iframe
-            v-if="takeMeThrough"
-            width="auto"
-            height="auto"
-            src="https://miro.com/app/embed/uXjVOCP7CVk=/?pres=1&frameId=3458764524137202647&embedId=779906434074"
-            frameborder="0"
-            scrolling="no"
-            allow="fullscreen; clipboard-read; clipboard-write"
-            allowfullscreen
-        />
-
-        <iframe
-            v-else
             width="auto"
             height="auto"
             src="https://miro.com/app/live-embed/uXjVOCP7CVk=/?moveToViewport=-88062,-124419,215771,113579&embedId=450868627160&embedAutoplay=true&embedMode=view_only_without_ui"
@@ -34,14 +17,7 @@
 
 
 <script lang="ts" setup>
-// defineProps<{
-// }>()
-
-const takeMeThrough = useTakeMeThrough()
 const panelIsOpen = usePanelIsOpen()
-
-
-
 </script>
 
 

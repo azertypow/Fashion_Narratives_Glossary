@@ -35,7 +35,6 @@
                 </div>
                 <h1
                     class="v-app__panel__header__title"
-                    v-if="!takeMeThrough"
                 >Fashion Narratives</h1>
             </div>
 
@@ -98,7 +97,6 @@ import {fetchApi_siteDetails, usePanelIsOpen, useShowAbout, useShowTeam} from "#
 import {useSiteDetails} from "~/composables/useStates";
 
 const panelIsOpen = usePanelIsOpen()
-const takeMeThrough = useTakeMeThrough()
 const showTeam = useShowTeam()
 const showAbout = useShowAbout()
 

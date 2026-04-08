@@ -12,10 +12,6 @@ export const useShowAbout = () => {
     return useState('showAbout', () => false)
 }
 
-export const useTakeMeThrough = () => {
-    return useState('takeMeThrough', () => false)
-}
-
 export const useActivatedTag = () => {
     return useState('activatedTag', () => '')
 }
