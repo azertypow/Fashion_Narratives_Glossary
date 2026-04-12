@@ -63,11 +63,10 @@ const props = defineProps<{
 <style lang="scss" scoped >
 .v-scenario-id {
     padding-top: 5rem;
-    padding-bottom: 50vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 100%;
-    overflow: hidden;
+    //overflow: hidden;
     gap: var(--fs-gutter);
     align-items: start;
 }
@@ -85,6 +84,9 @@ const props = defineProps<{
     width: 100%;
     box-sizing: border-box;
     padding-right: var(--fs-gutter);
+    position: sticky;
+    bottom: 0;
+    top: 5rem;
 }
 
 .v-slug-content__ressources__img {
