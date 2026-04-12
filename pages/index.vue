@@ -3,7 +3,7 @@
         <iframe
             width="auto"
             height="auto"
-            src="https://miro.com/app/live-embed/uXjVOCP7CVk=/?embedMode=view_only_without_ui&moveToViewport=-7024%2C-52648%2C71070%2C40506&embedId=895878607510"
+            src="https://miro.com/app/live-embed/uXjVJw218jc=/?embedMode=view_only_without_ui&moveToWidget=3458764646786149555&embedId=895878607510"
             frameborder="0"
             scrolling="no"
             allow="fullscreen; clipboard-read; clipboard-write"
