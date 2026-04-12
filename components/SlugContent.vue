@@ -32,10 +32,20 @@
             <div
                 class="v-slug-content__ressources__img"
             >
-                <img alt="object photography"
-                     v-for="imageData of data.images"
-                     :src="imageData.url"
-                />
+                <template v-for="imageData of data.images" >
+                    <video
+                        v-if="imageData.url.endsWith('.mp4')"
+                        autoplay
+                        loop
+                        muted
+                        playsinline
+                        :src="imageData.url"
+                    />
+                    <img alt="object photography"
+                         v-else
+                         :src="imageData.url"
+                    />
+                </template>
             </div>
 
         </div>
@@ -105,6 +115,14 @@ img {
         grid-column-start: 1;
         grid-column-end: 4;
     }
+}
+
+video {
+    display: block;
+    width: 100%;
+    height: auto;
+    grid-column-start: 1;
+    grid-column-end: 4;
 }
 
 .v-slug-content__ressources__video {
